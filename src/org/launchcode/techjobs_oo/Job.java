@@ -19,6 +19,7 @@ public class Job {
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+    this();
     this.name = name;
     this.employer = employer;
     this.location = location;
@@ -82,4 +83,26 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id, name, employer, location, positionType, coreCompetency);
     }
+
+    @Override
+    public String toString() {
+        if (name.equals("")){
+            name = "Data not available.";
+        } if (employer.getValue().isEmpty()){
+            employer.setValue("Data not available.");
+        } if (location.getValue().isEmpty()){
+            location.setValue("Data not available.");
+        } if (positionType.getValue().isEmpty()){
+            positionType.setValue("Data not available.");
+        } if (coreCompetency.getValue().isEmpty()){
+            coreCompetency.setValue("Data not available.");
+        }
+        return "\n" +
+                "ID:" + id + '\n' +
+                "Name:" + name + '\n' +
+                "Employer:" + employer + '\n' +
+                "Location:" + location + '\n' +
+                "Position Type:" + positionType + '\n'+
+                "Core Competency:" + coreCompetency + '\n';
+     }
 }
