@@ -50,7 +50,7 @@ public class JobTest {
 
     @Test
     public void testForLabels(){
-        assertTrue(jobThree.toString().contains("ID:3"));
+        assertTrue(jobThree.toString().contains("ID:" + jobThree.getId()));
         assertTrue(jobThree.toString().contains("Name:Product tester"));
         assertTrue(jobThree.toString().contains("Employer:ACME"));
         assertTrue(jobThree.toString().contains("Location:Desert"));
